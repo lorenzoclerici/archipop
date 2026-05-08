@@ -9,6 +9,20 @@
       content="Grazie per aver inviato la tua richiesta ad ArchiPop. Ti ricontatteremo entro 24 ore lavorative."
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Meta Pixel Code -->
+    <script>
+      !function(f,b,e,v,n,t,s)
+      {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+      n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+      if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+      n.queue=[];t=b.createElement(e);t.async=!0;
+      t.src=v;s=b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t,s)}(window, document,'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+      fbq('init', '900310656396050');
+      fbq('track', 'PageView');
+    </script>
+    <!-- End Meta Pixel Code -->
     <script>
       tailwind.config = {
         theme: {
@@ -26,6 +40,9 @@
     </script>
   </head>
   <body class="min-h-screen bg-blu text-white antialiased">
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=900310656396050&ev=PageView&noscript=1"
+    /></noscript>
     <main class="mx-auto flex min-h-screen w-full max-w-3xl items-center px-4 py-12">
       <section class="w-full rounded-2xl border-4 border-black bg-white p-8 text-nero shadow-2xl md:p-10">
         <p class="inline-flex rounded-full bg-giallo px-4 py-1.5 text-xs font-extrabold uppercase tracking-wide">
