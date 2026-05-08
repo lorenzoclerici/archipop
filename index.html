@@ -351,7 +351,7 @@
             </p>
           </div>
           <div>
-            <form id="contact-form" class="space-y-4 rounded-2xl bg-white p-6 text-nero shadow-2xl" action="thankyou.html" method="get">
+            <form id="contact-form" class="space-y-4 rounded-2xl bg-white p-6 text-nero shadow-2xl" novalidate>
               <div class="grid gap-4 sm:grid-cols-2">
                 <div><label for="nome" class="mb-1 block text-sm font-semibold">Nome *</label><input id="nome" name="nome" required class="focus-ring w-full rounded-lg border border-black/20 px-3 py-2" type="text" /></div>
                 <div><label for="cognome" class="mb-1 block text-sm font-semibold">Cognome *</label><input id="cognome" name="cognome" required class="focus-ring w-full rounded-lg border border-black/20 px-3 py-2" type="text" /></div>
@@ -527,8 +527,60 @@
         });
       }
 
-      // Submit nativo: il browser valida i campi required e poi
-      // reindirizza automaticamente a thankyou.html tramite action.
+      const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbz2GwJXHM5GPbhXCEAAptjP7yRieeW7FeEL_FVG_nATqW0x3K_Ob2QiwDXyzwWvQDvZQw/exec";
+      const form = document.getElementById("contact-form");
+      const feedback = document.getElementById("form-feedback");
+      const submitButton = form?.querySelector('button[type="submit"]');
+
+      form?.addEventListener("submit", async (event) => {
+        event.preventDefault();
+
+        if (!form.checkValidity()) {
+          form.reportValidity();
+          return;
+        }
+
+        const formData = new FormData(form);
+        const payload = {
+          nome: formData.get("nome"),
+          cognome: formData.get("cognome"),
+          telefono: formData.get("telefono"),
+          email: formData.get("email"),
+          comune: formData.get("comune"),
+          intervento: formData.get("intervento"),
+          descrizione: formData.get("descrizione"),
+          privacy: formData.get("privacy") === "on",
+          source_page: window.location.href
+        };
+
+        try {
+          if (feedback) {
+            feedback.classList.add("hidden");
+          }
+          if (submitButton) {
+            submitButton.disabled = true;
+            submitButton.textContent = "Invio in corso...";
+          }
+
+          await fetch(APPS_SCRIPT_URL, {
+            method: "POST",
+            headers: { "Content-Type": "text/plain;charset=utf-8" },
+            mode: "no-cors",
+            body: JSON.stringify(payload)
+          });
+
+          window.location.href = "thankyou.html";
+        } catch (error) {
+          if (feedback) {
+            feedback.textContent = "Si e verificato un problema nell'invio. Riprova tra poco oppure contattaci su WhatsApp.";
+            feedback.classList.remove("hidden");
+          }
+          if (submitButton) {
+            submitButton.disabled = false;
+            submitButton.textContent = "🚀 Richiedi Consulenza Gratuita";
+          }
+        }
+      });
     </script>
   </body>
 </html>
