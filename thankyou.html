@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grazie per la richiesta | ArchiPop</title>
+    <meta
+      name="description"
+      content="Grazie per aver inviato la tua richiesta ad ArchiPop. Ti ricontatteremo entro 24 ore lavorative."
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              giallo: "#f5d500",
+              rosa: "#f4c2d3",
+              blu: "#0da7d8",
+              rosso: "#d11751",
+              nero: "#111111"
+            }
+          }
+        }
+      };
+    </script>
+  </head>
+  <body class="min-h-screen bg-blu text-white antialiased">
+    <main class="mx-auto flex min-h-screen w-full max-w-3xl items-center px-4 py-12">
+      <section class="w-full rounded-2xl border-4 border-black bg-white p-8 text-nero shadow-2xl md:p-10">
+        <p class="inline-flex rounded-full bg-giallo px-4 py-1.5 text-xs font-extrabold uppercase tracking-wide">
+          Richiesta ricevuta
+        </p>
+        <h1 class="mt-5 text-3xl font-extrabold leading-tight md:text-4xl">Grazie! Ti contattiamo entro 24 ore.</h1>
+        <p class="mt-4 text-base text-black/80">
+          Abbiamo ricevuto correttamente la tua richiesta di consulenza gratuita. Un consulente ArchiPop ti richiamera presto.
+        </p>
+        <div class="mt-8 flex flex-col gap-3 sm:flex-row">
+          <a
+            href="index.html"
+            class="inline-flex items-center justify-center rounded-lg bg-rosso px-5 py-3 text-sm font-bold text-white transition hover:opacity-90"
+          >
+            Torna alla homepage
+          </a>
+          <a
+            href="https://wa.me/393516446119"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center justify-center rounded-lg border border-black/20 px-5 py-3 text-sm font-bold text-nero transition hover:bg-black/5"
+          >
+            Scrivici su WhatsApp
+          </a>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>

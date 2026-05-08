@@ -1,0 +1,517 @@
+<!doctype html>
+<html lang="it">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ristrutturazione Casa Roma | Consulenza Gratuita — ArchiPop</title>
+    <meta
+      name="description"
+      content="Ristruttura casa a Roma senza stress. ArchiPop ti guida dall'idea al cantiere: consulenza gratuita, preventivi trasparenti, professionisti selezionati. Rispondiamo in 24h."
+    />
+    <meta name="theme-color" content="#111111" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              giallo: "#f5d500",
+              rosa: "#f4c2d3",
+              blu: "#0da7d8",
+              rosso: "#d11751",
+              nero: "#111111"
+            },
+            fontFamily: {
+              sans: ["Inter", "system-ui", "-apple-system", "sans-serif"]
+            }
+          }
+        }
+      };
+    </script>
+    <style>
+      :root {
+        --color-giallo: #f5d500;
+        --color-rosa: #f4c2d3;
+        --color-blu: #0da7d8;
+        --color-rosso: #d11751;
+        --color-bianco: #ffffff;
+        --color-nero: #111111;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      .skip-link {
+        position: absolute;
+        left: -9999px;
+        top: 0.5rem;
+        z-index: 100;
+      }
+
+      .skip-link:focus {
+        left: 0.75rem;
+        background: var(--color-giallo);
+        color: var(--color-nero);
+        padding: 0.5rem 0.75rem;
+        border-radius: 0.5rem;
+      }
+
+      .focus-ring:focus-visible {
+        outline: none;
+        box-shadow: 0 0 0 3px rgba(245, 213, 0, 0.55);
+      }
+
+      [data-reveal] {
+        opacity: 0;
+        transform: translateY(20px);
+        transition: opacity 500ms ease, transform 500ms ease;
+      }
+
+      [data-reveal].is-visible {
+        opacity: 1;
+        transform: translateY(0);
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        html {
+          scroll-behavior: auto;
+        }
+
+        [data-reveal] {
+          opacity: 1 !important;
+          transform: none !important;
+          transition: none !important;
+        }
+      }
+    </style>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "LocalBusiness",
+        "name": "ArchiPop",
+        "description": "Consulenza per ristrutturazioni casa a Roma e provincia.",
+        "url": "https://archipop.it",
+        "telephone": "+39 06 513 7687",
+        "email": "info@archipop.it",
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Viale della Primavera, 103",
+          "postalCode": "00172",
+          "addressLocality": "Roma",
+          "addressCountry": "IT"
+        },
+        "areaServed": [
+          "Roma",
+          "Ciampino",
+          "Frascati",
+          "Grottaferrata",
+          "Marino",
+          "Guidonia Montecelio",
+          "Tivoli"
+        ]
+      }
+    </script>
+  </head>
+  <body class="bg-white text-nero antialiased">
+    <a href="#main-content" class="skip-link focus-ring">Vai al contenuto principale</a>
+
+    <header id="top" class="sticky top-0 z-50 border-b border-black/5 bg-white/95 backdrop-blur">
+      <nav class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 md:px-8" aria-label="Navigazione principale">
+        <a href="#home" class="focus-ring rounded-md">
+          <img src="Immagini/logo.png" alt="ArchiPop" class="h-10 w-auto" />
+        </a>
+        <button
+          id="menu-toggle"
+          class="focus-ring rounded-md p-2 md:hidden"
+          type="button"
+          aria-label="Apri menu di navigazione"
+          aria-controls="mobile-menu"
+          aria-expanded="false"
+        >
+          <svg class="h-6 w-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+        <ul class="hidden items-center gap-6 text-sm font-semibold md:flex">
+          <li><a class="focus-ring rounded-md px-2 py-1 hover:text-rosso" href="#chi-siamo">Chi Siamo</a></li>
+          <li><a class="focus-ring rounded-md px-2 py-1 hover:text-rosso" href="#come-funziona">Come Funziona</a></li>
+          <li><a class="focus-ring rounded-md px-2 py-1 hover:text-rosso" href="#contatti">Contatti</a></li>
+        </ul>
+        <a
+          href="#contatti"
+          class="focus-ring hidden rounded-lg bg-rosso px-4 py-2 text-sm font-bold text-white transition hover:opacity-90 md:inline-flex"
+          aria-label="Vai al form per richiedere la consulenza gratuita"
+        >
+          Consulenza Gratuita
+        </a>
+      </nav>
+      <div id="mobile-menu" class="hidden border-t border-black/10 bg-white px-4 py-4 md:hidden">
+        <ul class="space-y-3 text-base font-semibold">
+          <li><a class="focus-ring block rounded-md px-2 py-2 hover:bg-black/5" href="#chi-siamo">Chi Siamo</a></li>
+          <li><a class="focus-ring block rounded-md px-2 py-2 hover:bg-black/5" href="#come-funziona">Come Funziona</a></li>
+          <li><a class="focus-ring block rounded-md px-2 py-2 hover:bg-black/5" href="#contatti">Contatti</a></li>
+          <li>
+            <a
+              class="focus-ring mt-2 inline-flex w-full justify-center rounded-lg bg-rosso px-4 py-3 font-bold text-white"
+              href="#contatti"
+              aria-label="Richiedi la consulenza gratuita"
+            >
+              Consulenza Gratuita
+            </a>
+          </li>
+        </ul>
+      </div>
+    </header>
+
+    <main id="main-content">
+      <section id="home" class="bg-blu">
+        <div class="mx-auto grid min-h-[92vh] max-w-7xl items-center gap-10 px-4 py-12 md:grid-cols-2 md:px-8 md:py-16">
+          <div class="space-y-6">
+            <p class="inline-flex rounded-full border border-white/30 bg-white/15 px-4 py-1.5 text-xs font-semibold uppercase tracking-wide text-white">
+              Consulenza a Roma e dintorni
+            </p>
+            <h1 class="text-4xl font-extrabold leading-tight text-white md:text-6xl" data-reveal>Ristrutturi Casa a Roma?</h1>
+            <p class="max-w-xl text-lg leading-relaxed text-white/90" data-reveal>
+              ArchiPop ti accompagna dall'idea al cantiere: consulenza gratuita, professionisti selezionati e trasparenza totale su tempi e costi. Nessuna sorpresa. Solo risultati.
+            </p>
+            <div class="space-y-3" data-reveal>
+              <a
+                href="#contatti"
+                class="focus-ring inline-flex rounded-xl bg-rosso px-6 py-4 text-base font-bold text-white shadow-lg transition hover:scale-[1.01] hover:opacity-95"
+                aria-label="Richiedi la tua consulenza gratuita"
+              >
+                🚀 Richiedi la Tua Consulenza Gratuita
+              </a>
+              <p class="text-sm font-medium text-white/85">Nessun impegno. Ti ricontattiamo entro 24 ore.</p>
+            </div>
+          </div>
+          <div data-reveal>
+            <figure class="overflow-hidden rounded-2xl border-4 border-black bg-blu shadow-2xl">
+              <img
+                src="Immagini/Immagine1.png"
+                alt="Appartamento ristrutturato con stile contemporaneo a Roma"
+                class="h-[420px] w-full object-cover md:h-[560px]"
+              />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section id="problema" class="bg-white py-16 md:py-24">
+        <div class="mx-auto max-w-7xl px-4 md:px-8">
+          <div class="max-w-2xl">
+            <h2 class="text-3xl font-extrabold md:text-5xl" data-reveal>Ristrutturare è complicato</h2>
+            <p class="mt-4 text-lg text-black/75" data-reveal>
+              Prima ancora di pensare al cantiere, arrivano le domande difficili. Quelle che tengono svegli la notte.
+            </p>
+          </div>
+          <div class="mt-10 grid gap-6 md:grid-cols-3">
+            <article class="rounded-2xl border border-black/10 p-6 shadow-sm" data-reveal>
+              <p class="text-3xl" aria-hidden="true">❓</p>
+              <h3 class="mt-4 text-xl font-bold">"Non so da dove iniziare"</h3>
+              <p class="mt-3 text-black/75">Hai mille idee e zero esperienza in ristrutturazioni. Non sai chi chiamare per primo, né in che ordine fare le cose.</p>
+            </article>
+            <article class="rounded-2xl border border-black/10 p-6 shadow-sm" data-reveal>
+              <p class="text-3xl" aria-hidden="true">⚠️</p>
+              <h3 class="mt-4 text-xl font-bold">"Ho paura di spendere male i soldi"</h3>
+              <p class="mt-3 text-black/75">Preventivi che variano del 50%, lavori che si allungano, sorprese in corso d'opera. Il budget finale diventa un'incognita.</p>
+            </article>
+            <article class="rounded-2xl border border-black/10 p-6 shadow-sm" data-reveal>
+              <p class="text-3xl" aria-hidden="true">🤝</p>
+              <h3 class="mt-4 text-xl font-bold">"Non conosco nessuno di fiducia"</h3>
+              <p class="mt-3 text-black/75">Trovare un'impresa seria, un geometra affidabile e fornitori onesti a Roma è una lotteria che nessuno vuole giocare.</p>
+            </article>
+          </div>
+        </div>
+        <p class="mt-12 bg-giallo px-4 py-6 text-center text-xl font-extrabold text-nero md:text-2xl">
+          ArchiPop esiste per risolvere esattamente questi tre problemi.
+        </p>
+      </section>
+
+      <section id="chi-siamo" class="bg-blu py-16 text-white md:py-24">
+        <div class="mx-auto max-w-7xl px-4 md:px-8">
+          <div class="grid gap-10 md:grid-cols-[1.2fr_1fr]">
+            <div>
+              <h2 class="text-3xl font-extrabold md:text-5xl" data-reveal>Archipop è il tuo alleato nella ristrutturazione</h2>
+              <p class="mt-6 max-w-3xl text-lg leading-relaxed text-white/90" data-reveal>
+                ArchiPop non esegue i lavori e non ti vende progetti standard: ti affianca nelle scelte giuste, ti mette in contatto con i professionisti del suo network e controlla che tutto fili liscio nei tempi, nei costi e nella qualità.
+                Perché la casa deve essere un luogo sicuro e bello da vivere, costruito su basi di fiducia e chiarezza.
+              </p>
+            </div>
+            <figure data-reveal class="overflow-hidden rounded-2xl border-4 border-black/20 bg-white/20">
+              <img
+                src="Immagini/immagine2.png"
+                alt="Consulente che pianifica una ristrutturazione con il cliente"
+                class="h-full w-full object-cover"
+              />
+            </figure>
+          </div>
+          <div class="mt-12 grid gap-6 md:grid-cols-3">
+            <article class="rounded-2xl bg-white/10 p-6 ring-1 ring-white/20" data-reveal>
+              <h3 class="text-xl font-bold">Solo ciò che ti serve</h3>
+              <p class="mt-3 text-white/85">Analizziamo le tue esigenze reali e ti proponiamo esclusivamente i servizi che fanno la differenza per il tuo progetto.</p>
+            </article>
+            <article class="rounded-2xl bg-white/10 p-6 ring-1 ring-white/20" data-reveal>
+              <h3 class="text-xl font-bold">Trasparenza totale</h3>
+              <p class="mt-3 text-white/85">Preventivi chiari, professionisti selezionati, aggiornamenti costanti. Sai sempre dove sei, quanto spendi e cosa aspettarti.</p>
+            </article>
+            <article class="rounded-2xl bg-white/10 p-6 ring-1 ring-white/20" data-reveal>
+              <h3 class="text-xl font-bold">Al tuo fianco fino alla fine</h3>
+              <p class="mt-3 text-white/85">ArchiPop monitora ogni fase dei lavori e tutela i tuoi interessi dall'inizio alla consegna.</p>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section id="come-funziona" class="bg-nero py-16 text-white md:py-24">
+        <div class="mx-auto max-w-7xl px-4 md:px-8">
+          <h2 class="text-3xl font-extrabold md:text-5xl" data-reveal>5 Step. Semplici. Trasparenti.</h2>
+          <p class="mt-4 max-w-2xl text-lg text-white/80" data-reveal>Un metodo chiaro che elimina il caos e ti porta dalla prima idea alle chiavi di casa.</p>
+          <ol class="mt-10 grid gap-6 md:grid-cols-5">
+            <li class="rounded-2xl border border-white/20 bg-white/5 p-5" data-reveal><p class="text-giallo text-xl font-extrabold">01</p><h3 class="mt-2 text-lg font-bold">Richiedi</h3><p class="mt-2 text-sm text-white/75">Compila il form o scrivici su WhatsApp. La consulenza iniziale è sempre gratuita.</p></li>
+            <li class="rounded-2xl border border-white/20 bg-white/5 p-5" data-reveal><p class="text-giallo text-xl font-extrabold">02</p><h3 class="mt-2 text-lg font-bold">Ascoltiamo</h3><p class="mt-2 text-sm text-white/75">Ti incontriamo, anche online, e capiamo cosa vuoi davvero senza pressioni.</p></li>
+            <li class="rounded-2xl border border-white/20 bg-white/5 p-5" data-reveal><p class="text-giallo text-xl font-extrabold">03</p><h3 class="mt-2 text-lg font-bold">Proponiamo</h3><p class="mt-2 text-sm text-white/75">Ti presentiamo solo i servizi utili al tuo progetto, con preventivo chiaro.</p></li>
+            <li class="rounded-2xl border border-white/20 bg-white/5 p-5" data-reveal><p class="text-giallo text-xl font-extrabold">04</p><h3 class="mt-2 text-lg font-bold">Decidi</h3><p class="mt-2 text-sm text-white/75">Sei libero di procedere come preferisci. Zero pressioni, la scelta è tua.</p></li>
+            <li class="rounded-2xl border border-white/20 bg-white/5 p-5" data-reveal><p class="text-giallo text-xl font-extrabold">05</p><h3 class="mt-2 text-lg font-bold">Monitoriamo</h3><p class="mt-2 text-sm text-white/75">Seguiamo i lavori e ti aggiorniamo a ogni fase fino alla consegna.</p></li>
+          </ol>
+          <div class="mt-10 text-center">
+            <a
+              href="#contatti"
+              class="focus-ring inline-flex rounded-xl bg-rosso px-6 py-4 text-base font-bold text-white transition hover:opacity-90"
+              aria-label="Inizia dal passo uno con consulenza gratuita"
+            >
+              🚀 Inizia dal Passo 1 — Consulenza Gratuita
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section id="recensioni" class="bg-giallo py-16 md:py-24">
+        <div class="mx-auto max-w-7xl px-4 md:px-8">
+          <h2 class="text-3xl font-extrabold md:text-5xl" data-reveal>Cosa Dicono i Nostri Clienti</h2>
+          <p class="mt-4 max-w-2xl text-lg text-black/80" data-reveal>Persone reali, progetti reali, risultati misurabili.</p>
+          <div class="mt-10 grid gap-6 md:grid-cols-3">
+            <blockquote class="rounded-2xl border-l-4 border-rosso bg-white p-6 shadow-sm" data-reveal>
+              <p class="font-bold">★★★★★</p>
+              <p class="mt-3 text-black/80">"Non avevo idea da dove iniziare. ArchiPop mi ha spiegato tutto step by step, mi ha trovato un'impresa seria e ha seguito ogni fase. Casa trasformata, zero stress."</p>
+              <footer class="mt-4 text-sm font-semibold text-black/70">— Marco R. | Roma · Ristrutturazione completa 85 m²</footer>
+            </blockquote>
+            <blockquote class="rounded-2xl border-l-4 border-rosso bg-white p-6 shadow-sm" data-reveal>
+              <p class="font-bold">★★★★★</p>
+              <p class="mt-3 text-black/80">"Finalmente qualcuno che ti dice la verità sui costi invece di dirti quello che vuoi sentire. Il preventivo è stato rispettato al 100%."</p>
+              <footer class="mt-4 text-sm font-semibold text-black/70">— Giulia M. | Frascati · Rifacimento bagno e cucina</footer>
+            </blockquote>
+            <blockquote class="rounded-2xl border-l-4 border-rosso bg-white p-6 shadow-sm" data-reveal>
+              <p class="font-bold">★★★★★</p>
+              <p class="mt-3 text-black/80">"Pensavo fosse l'ennesima consulenza per poi sparire. Invece ci hanno seguiti per 4 mesi, fino alla consegna. Lo consiglio a tutti."</p>
+              <footer class="mt-4 text-sm font-semibold text-black/70">— Famiglia Benedetti | Tivoli · Ristrutturazione parziale</footer>
+            </blockquote>
+          </div>
+        </div>
+        <div class="mt-12 bg-nero py-8 text-white">
+          <div class="mx-auto grid max-w-7xl gap-6 px-4 text-center sm:grid-cols-2 md:grid-cols-4 md:px-8">
+            <div><p class="text-4xl font-extrabold" data-counter-target="50">0</p><p class="mt-1 text-sm text-white/70">Progetti seguiti</p></div>
+            <div><p class="text-4xl font-extrabold" data-counter-target="7">0</p><p class="mt-1 text-sm text-white/70">Comuni serviti</p></div>
+            <div><p class="text-4xl font-extrabold">24h</p><p class="mt-1 text-sm text-white/70">Risposta garantita</p></div>
+            <div><p class="text-4xl font-extrabold" data-counter-target="100">0</p><p class="mt-1 text-sm text-white/70">Consulenze gratuite</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contatti" class="bg-rosso py-16 text-white md:py-24">
+        <div class="mx-auto grid max-w-7xl gap-10 px-4 md:grid-cols-2 md:px-8">
+          <div>
+            <h2 class="text-3xl font-extrabold md:text-5xl" data-reveal>Raccontaci la Tua Casa.<br />È Gratis.</h2>
+            <p class="mt-4 max-w-xl text-lg text-white/85" data-reveal>
+              Compila il form: ti ricontattiamo entro 24 ore per fissare la consulenza. Nessun impegno. Solo ascolto.
+            </p>
+          </div>
+          <div>
+            <form id="contact-form" class="space-y-4 rounded-2xl bg-white p-6 text-nero shadow-2xl" action="thankyou.html" method="get">
+              <div class="grid gap-4 sm:grid-cols-2">
+                <div><label for="nome" class="mb-1 block text-sm font-semibold">Nome *</label><input id="nome" name="nome" required class="focus-ring w-full rounded-lg border border-black/20 px-3 py-2" type="text" /></div>
+                <div><label for="cognome" class="mb-1 block text-sm font-semibold">Cognome *</label><input id="cognome" name="cognome" required class="focus-ring w-full rounded-lg border border-black/20 px-3 py-2" type="text" /></div>
+              </div>
+              <div class="grid gap-4 sm:grid-cols-2">
+                <div><label for="telefono" class="mb-1 block text-sm font-semibold">Telefono *</label><input id="telefono" name="telefono" required class="focus-ring w-full rounded-lg border border-black/20 px-3 py-2" type="tel" /></div>
+                <div><label for="email" class="mb-1 block text-sm font-semibold">Email *</label><input id="email" name="email" required class="focus-ring w-full rounded-lg border border-black/20 px-3 py-2" type="email" /></div>
+              </div>
+              <div class="grid gap-4 sm:grid-cols-2">
+                <div>
+                  <label for="comune" class="mb-1 block text-sm font-semibold">Comune *</label>
+                  <select id="comune" name="comune" required class="focus-ring w-full rounded-lg border border-black/20 px-3 py-2">
+                    <option value="">Seleziona</option>
+                    <option>Roma</option><option>Ciampino</option><option>Frascati</option><option>Grottaferrata</option><option>Marino</option><option>Guidonia Montecelio</option><option>Tivoli</option>
+                  </select>
+                </div>
+                <div>
+                  <label for="intervento" class="mb-1 block text-sm font-semibold">Tipo di intervento *</label>
+                  <select id="intervento" name="intervento" required class="focus-ring w-full rounded-lg border border-black/20 px-3 py-2">
+                    <option value="">Seleziona</option>
+                    <option>Ristrutturazione completa</option>
+                    <option>Ristrutturazione parziale</option>
+                    <option>Rifacimento bagno</option>
+                    <option>Altro</option>
+                  </select>
+                </div>
+              </div>
+              <div>
+                <label for="descrizione" class="mb-1 block text-sm font-semibold">Descrizione progetto</label>
+                <textarea id="descrizione" name="descrizione" rows="4" class="focus-ring w-full rounded-lg border border-black/20 px-3 py-2" placeholder="Raccontaci il tuo progetto..."></textarea>
+              </div>
+              <label class="flex items-start gap-2 text-sm">
+                <input id="privacy" name="privacy" required class="mt-1 h-4 w-4 rounded border-black/20" type="checkbox" />
+                <span>Accetto la Privacy Policy e il trattamento dei dati personali *</span>
+              </label>
+              <button
+                type="submit"
+                class="focus-ring w-full rounded-lg bg-giallo px-5 py-3 text-base font-extrabold text-nero transition hover:brightness-95"
+                aria-label="Invia richiesta consulenza gratuita"
+              >
+                🚀 Richiedi Consulenza Gratuita
+              </button>
+              <p class="text-center text-xs text-black/70">🔒 I tuoi dati sono al sicuro. Non riceverai spam, solo una chiamata dal nostro team.</p>
+              <p id="form-feedback" class="hidden rounded-lg bg-emerald-100 p-3 text-sm font-semibold text-emerald-800" role="status" aria-live="polite"></p>
+              <p class="text-center text-sm">
+                Preferisci scrivere su WhatsApp?
+                <a href="https://wa.me/393516446119" class="focus-ring font-bold underline" target="_blank" rel="noopener noreferrer">Apri chat →</a>
+              </p>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="bg-nero py-12 text-white">
+      <div class="mx-auto grid max-w-7xl gap-8 px-4 md:grid-cols-4 md:px-8">
+        <div>
+          <img src="Immagini/logo.png" alt="Logo ArchiPop" class="h-10 w-auto" />
+          <p class="mt-3 text-sm text-white/70">Il tuo partner per ristrutturazioni smart a Roma e dintorni. Chiarezza, trasparenza e servizi su misura.</p>
+        </div>
+        <div>
+          <h3 class="font-bold">Servizi</h3>
+          <ul class="mt-3 space-y-1 text-sm text-white/70">
+            <li>Consulenza gratuita</li><li>Pratiche Edilizie</li><li>Coordinamento lavori</li><li>Preventivi Gratuiti</li><li>Convenzioni forniture</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-bold">Comuni serviti</h3>
+          <ul class="mt-3 space-y-1 text-sm text-white/70">
+            <li>Roma</li><li>Ciampino · Frascati</li><li>Grottaferrata · Marino</li><li>Guidonia Montecelio</li><li>Tivoli</li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="font-bold">Contatti</h3>
+          <ul class="mt-3 space-y-1 text-sm text-white/70">
+            <li>info@archipop.it</li><li>+39 06 513 7687</li><li>Viale della Primavera, 103 — 00172 Roma</li><li>Lun–Ven · 9:00–18:00</li>
+          </ul>
+        </div>
+      </div>
+      <div class="mx-auto mt-8 max-w-7xl border-t border-white/20 px-4 pt-4 text-xs text-white/60 md:px-8">
+        © 2025 ArchiPop S.r.l. — P.IVA: IT18189391008 · Privacy Policy · Cookie Policy · Termini e Condizioni
+      </div>
+    </footer>
+
+    <a
+      href="#contatti"
+      class="focus-ring fixed inset-x-0 bottom-0 z-40 bg-rosso px-4 py-3 text-center text-sm font-bold text-white md:hidden"
+      aria-label="Apri modulo consulenza gratuita"
+    >
+      🚀 Consulenza Gratuita — È Gratis
+    </a>
+
+    <a
+      href="https://wa.me/393516446119"
+      target="_blank"
+      rel="noopener noreferrer"
+      aria-label="Scrivici su WhatsApp"
+      title="Ciao! Vuoi una consulenza gratuita?"
+      class="focus-ring fixed bottom-20 right-4 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] text-2xl text-white shadow-lg transition hover:scale-105 md:bottom-6"
+    >
+      💬
+    </a>
+
+    <script>
+      const prefersReduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileMenu = document.getElementById("mobile-menu");
+      menuToggle?.addEventListener("click", () => {
+        const expanded = menuToggle.getAttribute("aria-expanded") === "true";
+        menuToggle.setAttribute("aria-expanded", String(!expanded));
+        mobileMenu.classList.toggle("hidden");
+      });
+
+      mobileMenu?.querySelectorAll("a").forEach((link) => {
+        link.addEventListener("click", () => {
+          menuToggle?.setAttribute("aria-expanded", "false");
+          mobileMenu.classList.add("hidden");
+        });
+      });
+
+      const revealElements = document.querySelectorAll("[data-reveal]");
+      if (!prefersReduced && "IntersectionObserver" in window) {
+        const observer = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting) {
+                entry.target.classList.add("is-visible");
+              }
+            });
+          },
+          { threshold: 0.16 }
+        );
+        revealElements.forEach((el) => observer.observe(el));
+      } else {
+        revealElements.forEach((el) => el.classList.add("is-visible"));
+      }
+
+      const counters = document.querySelectorAll("[data-counter-target]");
+      const animateCounter = (el) => {
+        const target = Number(el.getAttribute("data-counter-target"));
+        const duration = 1200;
+        const start = performance.now();
+        const tick = (now) => {
+          const progress = Math.min((now - start) / duration, 1);
+          el.textContent = Math.floor(progress * target).toString();
+          if (progress < 1) {
+            requestAnimationFrame(tick);
+          } else {
+            el.textContent = target + (target >= 50 ? "+" : "");
+          }
+        };
+        requestAnimationFrame(tick);
+      };
+
+      if (!prefersReduced && "IntersectionObserver" in window) {
+        const counterObserver = new IntersectionObserver(
+          (entries) => {
+            entries.forEach((entry) => {
+              if (entry.isIntersecting && !entry.target.dataset.animated) {
+                entry.target.dataset.animated = "true";
+                animateCounter(entry.target);
+              }
+            });
+          },
+          { threshold: 0.5 }
+        );
+        counters.forEach((counter) => counterObserver.observe(counter));
+      } else {
+        counters.forEach((counter) => {
+          const target = counter.getAttribute("data-counter-target");
+          counter.textContent = target + (Number(target) >= 50 ? "+" : "");
+        });
+      }
+
+      // Submit nativo: il browser valida i campi required e poi
+      // reindirizza automaticamente a thankyou.html tramite action.
+    </script>
+  </body>
+</html>
